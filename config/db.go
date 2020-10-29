@@ -14,7 +14,8 @@ import (
 
 func Connect() {
 	// Database Config
-	clientOptions := options.Client().ApplyURI("mongodb://user:password@host:port/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
+	// clientOptions := options.Client().ApplyURI("mongodb://user:password@host:port/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
+	clientOptions := options.Client().ApplyURI("mongodb+srv://Admin:%40AZERTY12@mycluster.xbgky.mongodb.net/test")
 	client, err := mongo.NewClient(clientOptions)
 
 	//Set up a context required by mongo.Connect
