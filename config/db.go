@@ -1,6 +1,7 @@
 package config
 
 import (
+	"cesi/go_mongo/controllers"
 	"context"
 	"log"
 	"time"
@@ -8,8 +9,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
-
-	"github.com/cavdy-play/go_mongo/controllers"
 )
 
 func Connect() {
@@ -50,6 +49,7 @@ func TestConnect() {
 	defer cancel()
 
 	err = client.Ping(context.Background(), readpref.Primary())
+
 	if err != nil {
 		log.Fatal("Couldn't connect to the database", err)
 	} else {

@@ -1,3 +1,9 @@
 FROM golang:latest
 
-COPY . .
+WORKDIR /app
+
+COPY . /app
+
+EXPOSE 4747
+
+CMD ["go", "run", "main.go"]
