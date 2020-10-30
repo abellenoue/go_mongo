@@ -10,7 +10,7 @@ import (
 	"cesi/go_mongo/routes"
 )
 
-func Testmain(m *testing.M) {
+func TestMain(m *testing.M) {
 	// Database
 	config.TestConnect()
 
@@ -19,8 +19,8 @@ func Testmain(m *testing.M) {
 
 	// Route Handlers / Endpoints
 	routes.Routes(router)
-
+	// controllers.TestCreateTodo(m)
 	m.Run()
 
-	log.Fatal(router.Run(":4747"))
+	log.Fatal(router.Run(":493"))
 }
